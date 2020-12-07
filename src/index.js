@@ -36,4 +36,5 @@ const control = {
 module.exports = {
     initDevice,
     models,
-}
+    control,
+};
