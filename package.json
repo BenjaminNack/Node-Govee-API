@@ -19,6 +19,6 @@
   "author": "Benjamin Nack",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.88.2"
+    "superagent": "^6.1.0"
   }
 }
