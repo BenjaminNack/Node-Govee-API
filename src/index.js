@@ -33,7 +33,7 @@ const control = {
     }
 }
 
-export default {
+module.exports = {
     initDevice,
     models,
 }

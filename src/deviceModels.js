@@ -28,4 +28,6 @@ const models = {
     H6148: "H6148",
 };
 
-export default models;
+module.exports = {
+    models
+}
