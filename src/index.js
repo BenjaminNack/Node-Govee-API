@@ -1,4 +1,4 @@
-const request = require("request");
+const superagent = require('superagent');
 const models = require('./deviceModels');
 
 let apikey = '';
@@ -13,23 +13,21 @@ function initDevice(key, macaddress, model){
 
 const control = {
     setOn: function(on) {
-        request('https://developer-api.govee.com/v1/devices/control', 
-            { 
-                ethod: 'PUT', 
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Govee-API-Key': apikey
-                },
-                formData: {
-                    device,
-                    model,
-                    cmd: {
-                        name: "turn",
-                        value: on ? "on" : "off",
-                    }
+        superagent
+            .put('https://developer-api.govee.com/v1/devices/control')
+            .send({  
+                device,
+                model,
+                cmd: {
+                    name: "turn",
+                    value: on ? "on" : "off",
                 }
-            }
-        );
+            })
+            .set('Content-Type', 'application/json')
+            .set('Govee-API-Key', apikey)
+            .end((err, res) => {
+                console.log(err);
+            });
     }
 }
 
