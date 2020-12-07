@@ -1,0 +1,20 @@
+{
+  "name": "govee-api",
+  "version": "1.0.0",
+  "description": "Control govee branded wifi light strips",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "govee",
+    "rgb",
+    "lights"
+  ],
+  "repository": {
+    "url": "https://github.com/BenjaminNack/Node-Govee-API.git",
+    "type": "git"
+  },
+  "author": "Benjamin Nack",
+  "license": "ISC"
+}
