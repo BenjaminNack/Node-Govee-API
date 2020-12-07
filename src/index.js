@@ -16,14 +16,13 @@ const control = {
         superagent
             .put('https://developer-api.govee.com/v1/devices/control')
             .send({  
-                device,
-                model,
+                device: device,
+                model: model,
                 cmd: {
                     name: "turn",
                     value: on ? "on" : "off",
                 }
             })
-            .set('Content-Type', 'application/json')
             .set('Govee-API-Key', apikey)
             .end((err, res) => {
                 console.log(err);
