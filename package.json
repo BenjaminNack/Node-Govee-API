@@ -17,5 +17,8 @@
     "type": "git"
   },
   "author": "Benjamin Nack",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
 }
