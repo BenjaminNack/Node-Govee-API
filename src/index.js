@@ -17,7 +17,13 @@ const control = {
             name: "turn",
             value: on ? "on" : "off"
         }, apikey, device, model);
-    }
+    },
+    setBrightness: async function(brightness) {
+        return await controlRequest.sendCtrl({
+            name: "brightness",
+            value: Math.min(Math.max(brightness, 0), 100)
+        }, apikey, device, model);
+    },
 }
 
 module.exports = {
