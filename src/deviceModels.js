@@ -1,4 +1,4 @@
-const models = {
+module.exports = {
     H6160: "H6160",
     H6163: "H6163",
     H6104: "H6104",
@@ -26,8 +26,4 @@ const models = {
     H6002: "H6002",
     H6003: "H6003",
     H6148: "H6148",
-};
-
-module.exports = {
-    models
 }
