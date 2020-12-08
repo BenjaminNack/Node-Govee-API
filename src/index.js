@@ -15,7 +15,7 @@ const control = {
     /**
      * @param {boolean} on
      * @returns Request promise
-     * @summary Turns the light on or off
+     * @summary Turns the light on or off.
      */
     setOn: function(on) {
         return controlRequest.sendCtrl({
@@ -26,7 +26,7 @@ const control = {
     /**
      * @param {Number} brightness
      * @returns Request promise
-     * @summary Set the brightness of the light in a range of 0-100
+     * @summary Set the brightness of the light in a range of 0-100.
      */
     setBrightness: function(brightness) {
         return controlRequest.sendCtrl({
@@ -39,7 +39,7 @@ const control = {
      * @param {Number} g Green value    0-255
      * @param {Number} b Blue value     0-255
      * @returns Request promise
-     * @summary Set the color of the light
+     * @summary Set the color of the light.
      */
     setColor: function(r, g, b) {
         return controlRequest.sendCtrl({
@@ -50,7 +50,7 @@ const control = {
     /**
      * @param {Number} temperature Color temperature in kelvin 0-12000
      * @returns Request promise
-     * @summary Set the color temperature of the light
+     * @summary Set the color temperature of the light.
      */
     setColorTemperature: function(temperature) {
         return controlRequest.sendCtrl({
@@ -61,6 +61,10 @@ const control = {
 }
 
 const status = {
+    /**
+     * @returns Request promise that returns the current status of the light
+     * @summary Gets current status of the light which contains things like wether it's on or the color.
+     */
     getDeviceStatus: function() {
         return controlRequest.getStatus(apikey, device, model)
     }
