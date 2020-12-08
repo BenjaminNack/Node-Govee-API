@@ -12,26 +12,26 @@ function initDevice(key, macaddress, deviceModel){
 }
 
 const control = {
-    setOn: async function(on) {
-        return await controlRequest.sendCtrl({
+    setOn: function(on) {
+        return controlRequest.sendCtrl({
             name: "turn",
             value: on ? "on" : "off"
         }, apikey, device, model);
     },
-    setBrightness: async function(brightness) {
-        return await controlRequest.sendCtrl({
+    setBrightness: function(brightness) {
+        return controlRequest.sendCtrl({
             name: "brightness",
             value: Math.min(Math.max(brightness, 0), 100)
         }, apikey, device, model);
     },
-    setColor: async function(r, g, b) {
-        return await controlRequest.sendCtrl({
+    setColor: function(r, g, b) {
+        return controlRequest.sendCtrl({
             name: "color",
             value: { r, g, b }
         }, apikey, device, model);
     },
-    setColorTemperature: async function(temperature) {
-        return await controlRequest.sendCtrl({
+    setColorTemperature: function(temperature) {
+        return controlRequest.sendCtrl({
             name: "colorTem",
             value: temperature
         }, apikey, device, model);
@@ -39,8 +39,8 @@ const control = {
 }
 
 const status = {
-    getDeviceStatus: async function() {
-        return await controlRequest.getStatus(apikey, device, model)
+    getDeviceStatus: function() {
+        return controlRequest.getStatus(apikey, device, model)
     }
 }
 
