@@ -16,7 +16,7 @@ const control = {
         controlRequest.sendCtrl({
             name: "turn",
             value: on ? "on" : "off"
-        });
+        }, apikey, device, model);
     }
 }
 
