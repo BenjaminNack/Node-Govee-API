@@ -30,7 +30,7 @@ module.exports = {
             };
 
             superagent
-                .get('https://developer-api.govee.com/v1/devices/state')
+                .get(`https://developer-api.govee.com/v1/devices/state?device=${encodeURI(device)}&model=${encodeURI(model)}`)
                 .send(data)
                 .set('Govee-API-Key', apikey)
                 .end(function (err, res){
