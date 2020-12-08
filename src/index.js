@@ -12,8 +12,8 @@ function initDevice(key, macaddress, deviceModel){
 }
 
 const control = {
-    setOn: function(on) {
-        controlRequest.sendCtrl({
+    setOn: async function(on) {
+        return await controlRequest.sendCtrl({
             name: "turn",
             value: on ? "on" : "off"
         }, apikey, device, model);
