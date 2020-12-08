@@ -1,5 +1,5 @@
-const superagent = require('superagent');
 const models = require('./deviceModels');
+const control = require('./control');
 
 let apikey = '';
 let device = '';
@@ -13,27 +13,9 @@ function initDevice(key, macaddress, deviceModel){
 
 const control = {
     setOn: function(on) {
-        return new Promise(function(resolve, reject) {
-            const data = {  
-                device: device,
-                model: model,
-                cmd: {
-                    name: "turn",
-                    value: on ? "on" : "off",
-                }
-            };
-    
-            superagent
-                .put('https://developer-api.govee.com/v1/devices/control')
-                .send(data)
-                .set('Govee-API-Key', apikey)
-                .end(function (err, res){
-                    if(!err){
-                        resolve(res);
-                    }
-
-                    reject(err);
-                });
+        control.sendCtrl({
+            name: "turn",
+            value: on ? "on" : "off"
         });
     }
 }
