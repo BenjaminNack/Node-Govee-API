@@ -24,6 +24,12 @@ const control = {
             value: Math.min(Math.max(brightness, 0), 100)
         }, apikey, device, model);
     },
+    setColor: async function(r, g, b) {
+        return await controlRequest.sendCtrl({
+            name: "color",
+            value: { r, g, b }
+        }, apikey, device, model);
+    },
 }
 
 module.exports = {
