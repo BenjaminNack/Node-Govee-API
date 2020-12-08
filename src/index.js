@@ -1,5 +1,5 @@
 const models = require('./deviceModels');
-const control = require('./control');
+const controlRequest = require('./control');
 
 let apikey = '';
 let device = '';
@@ -13,7 +13,7 @@ function initDevice(key, macaddress, deviceModel){
 
 const control = {
     setOn: function(on) {
-        control.sendCtrl({
+        controlRequest.sendCtrl({
             name: "turn",
             value: on ? "on" : "off"
         });
