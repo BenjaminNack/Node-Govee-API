@@ -21,5 +21,26 @@ module.exports = {
                     reject(err);
                 });
         });
+    },
+    getStatus: function(apikey, device, model) {
+        return new Promise(function(resolve, reject) {
+            const data = {
+                device,
+                model
+            };
+
+            superagent
+                .get('https://developer-api.govee.com/v1/devices/state')
+                .send(data)
+                .set('Govee-API-Key', apikey)
+                .end(function (err, res){
+                    if(!err){
+                        resolve(res);
+                    }
+
+                    reject(err);
+                });
+        });
+        
     }
 }
