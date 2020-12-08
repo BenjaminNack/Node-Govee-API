@@ -4,7 +4,12 @@ const controlRequest = require('./control');
 let apikey = '';
 let device = '';
 let model = '';
-
+/**
+ * @param {string} key Govee API Key
+ * @param {string} macaddress The mac address of the device you intend to control
+ * @param {string} deviceModel The model of device you intend to control eg. "H6117"
+ * Store the required information for communicating with your govee lights.
+ */
 function initDevice(key, macaddress, deviceModel){
     apikey = key;
     device = macaddress;
