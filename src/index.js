@@ -14,7 +14,6 @@ function initDevice(key, macaddress, deviceModel){
 const control = {
     /**
      * @param {boolean} on
-     * @returns {Promise} Request promise
      * Turns the light on or off
      */
     setOn: function(on) {
@@ -23,6 +22,10 @@ const control = {
             value: on ? "on" : "off"
         }, apikey, device, model);
     },
+    /**
+     * @param {Number} brightness
+     * Set the brightness in a range of 0-100
+     */
     setBrightness: function(brightness) {
         return controlRequest.sendCtrl({
             name: "brightness",
