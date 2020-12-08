@@ -38,8 +38,15 @@ const control = {
     },
 }
 
+const status = {
+    getDeviceStatus: async function() {
+        return await controlRequest.getStatus(apikey, device, model)
+    }
+}
+
 module.exports = {
     initDevice,
     models,
     control,
+    status,
 };
