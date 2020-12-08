@@ -47,6 +47,11 @@ const control = {
             value: { r, g, b }
         }, apikey, device, model);
     },
+    /**
+     * @param {Number} temperature Color temperature in kelvin 0-12000
+     * @returns Request promise
+     * @summary Set the color temperature of the light
+     */
     setColorTemperature: function(temperature) {
         return controlRequest.sendCtrl({
             name: "colorTem",
