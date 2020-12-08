@@ -35,7 +35,7 @@ module.exports = {
                 .set('Govee-API-Key', apikey)
                 .end(function (err, res){
                     if(!err){
-                        resolve(res);
+                        resolve(res.body["data"]);
                     }
 
                     reject(err);
