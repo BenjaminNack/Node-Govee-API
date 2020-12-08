@@ -12,6 +12,11 @@ function initDevice(key, macaddress, deviceModel){
 }
 
 const control = {
+    /**
+     * @param {boolean} on
+     * @returns {Promise} Request promise
+     * Turns the light on or off
+     */
     setOn: function(on) {
         return controlRequest.sendCtrl({
             name: "turn",
