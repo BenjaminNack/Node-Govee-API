@@ -30,6 +30,12 @@ const control = {
             value: { r, g, b }
         }, apikey, device, model);
     },
+    setColorTemperature: async function(temperature) {
+        return await controlRequest.sendCtrl({
+            name: "colorTem",
+            value: temperature
+        }, apikey, device, model);
+    },
 }
 
 module.exports = {
