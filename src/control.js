@@ -1,7 +1,7 @@
 const superagent = require('superagent');
 
 module.exports = {
-    sendCtrl: function(cmd, device, model) {
+    sendCtrl: function(cmd, apikey, device, model) {
         return new Promise(function(resolve, reject) {
             const data = {  
                 device,
